@@ -1,0 +1,23 @@
+<!-- Display user details -->
+<div *ngIf="userData">
+    <h2>User Details:</h2>
+    <p>Name: {{ userData.name }}</p>
+    <p>Username: {{ userData.login }}</p>
+    <p>Bio: {{ userData.bio }}</p>
+    <!-- Add more user details as needed -->
+  </div>
+  
+  <!-- Display repositories -->
+  <div *ngFor="let repo of repositories">
+    <p>Name: {{ repo.name }}</p>
+    <p>Description: {{ repo.description }}</p>
+    <!-- Add more repository details as needed -->
+  </div>
+  
+  <!-- Pagination controls -->
+  <div>
+    <button (click)="prevPage()" [disabled]="page === 1">Previous</button>
+    <span>Page {{ page }}</span>
+    <button (click)="nextPage()">Next</button>
+  </div>
+  
